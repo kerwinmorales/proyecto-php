@@ -15,9 +15,9 @@
                     <a href="index.php?modulo=inventario" class="nav-link">Inventario</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Salir</a>
+                    <a href="index.php?modulo=error404" class="nav-link">Salir</a>
                 </li>
             </ul>
-           </nav>
+           </nav>   
         </div>
 </section>
