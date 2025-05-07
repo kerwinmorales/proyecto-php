@@ -75,32 +75,39 @@
             
                     </div>
 
-                     <?php
+                    <?php
 
                     /*=============================================
                     FORMA EN QUE SE INSTA­NCIA LA CLASE DE UN MÉTODO ESTÁTICO
                     =============================================*/
 
+                    // Método estático para registrar
                     $registro = ControladorRegistro::ctrRegistro();
 
                     if ($registro === 'ok') {
-                        // Aquí sí entra cuando el método devuelve "ok"
-                        echo '<script>
-                            if (window.history.replaceState) {
-                                window.history.replaceState(null, null, window.location.href);
-                            }
-                        </script>';
-                        echo '<div class="alert alert-success">El usuario ha sido registrado</div>';
+                        // Evita reenvío del formulario al refrescar la página
+                        //uso de heredoc (<<<HTML):
+                        //Facilita la inclusión de HTML y JS con múltiples líneas sin necesidad de múltiples echo y mejora la legibilidad.
+                        echo <<<HTML
+                            <script>
+                                if (window.history.replaceState) {
+                                    window.history.replaceState(null, null, window.location.href);
+                                }
+                            </script>
+                            <div class="alert alert-success">El usuario ha sido registrado</div>
+                        HTML;
                     }
 
                 ?>
-                
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-            
-                </form>
-            
-            </div>
 
+
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            
+            </form>
+            
         </div>
 
     </div>
+
+</div>
